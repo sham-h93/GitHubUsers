@@ -1,0 +1,101 @@
+[versions]
+appId = "ir.hoseinsa.githubusers"
+compileSdk = "34"
+minSdk = "24"
+targetSdk = "34"
+versionCode = "1"
+versionName = "1.0"
+kotlin = "1.9.22"
+androidGradlePlugin = "8.3.1"
+kotlinPluginSerialization = "1.9.21"
+ktx = "1.12.0"
+preferencesDataStore = "1.0.0"
+lifecycleRuntimeKtx = "2.7.0"
+appCompat = "1.6.1"
+androidMaterial = "1.11.0"
+coroutines = "1.8.0"
+jUnit = "4.13.2"
+extJUnit = "1.1.5"
+espressoCore = "3.5.1"
+compose = "1.6.4"
+activityCompose = "1.8.2"
+navigationCompose = "2.7.7"
+composeMaterial3 = "1.2.1"
+composeCompiler = "1.5.9"
+koin = "3.5.3"
+ktor = "2.3.2"
+kotlinXSerializationPlugin = "1.9.21"
+kotlinXSerialization = "1.6.2"
+coil = "2.5.0"
+pagingRuntime = "3.2.1"
+pagingCompose = "3.3.0-alpha05"
+
+[libraries]
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+app-compat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+preferences-data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "preferencesDataStore" }
+android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
+j-unit = { group = "junit", name = "junit", version.ref = "jUnit" }
+ext-j-unit = { group = "androidx.test.ext", name = "junit", version.ref = "extJUnit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "composeMaterial3" }
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "compose" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "compose" }
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor" }
+ktor-client-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinXSerialization" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "pagingCompose" }
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingCompose" }
+
+# buildSrc dependencies
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[bundles]
+androidx =[
+    "androidx-ktx",
+    "app-compat",
+    "android-material"
+]
+compose = [
+    "activity-compose",
+    "compose-material3",
+    "compose-ui",
+    "compose-ui-graphics",
+    "compose-ui-tooling",
+    "compose-ui-tooling-preview",
+    "compose-ui-test-manifest",
+    "compose-runtime"
+]
+ktor = [
+    "ktor-client-core",
+    "ktor-client-android",
+    "ktor-client-auth",
+    "ktor-client-logging",
+    "ktor-client-content-negotiation",
+    "ktor-client-serialization",
+    "ktor-client-serialization-kotlinx-json",
+    "kotlinx-serialization-json"
+]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-plugin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPluginSerialization" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinPluginSerialization" }
