@@ -1,5 +1,4 @@
 [versions]
-appId = "ir.hoseinsa.githubusers"
 compileSdk = "34"
 minSdk = "24"
 targetSdk = "34"

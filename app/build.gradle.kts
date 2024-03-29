@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = ProjectConfig.appId
-    compileSdk = ProjectConfig.compileSdk
+    namespace = "ir.hoseinsa.githubusers"
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = ProjectConfig.appId
-        minSdk = ProjectConfig.minSdk
-        targetSdk = ProjectConfig.targetSdk
-        versionCode = ProjectConfig.versionCode
-        versionName = ProjectConfig.versionName
+        applicationId = "ir.hoseinsa.githubusers"
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -50,10 +50,13 @@ android {
 }
 
 dependencies {
-    androidX()
-    compose()
-    coil()
-    koin()
+    implementation(libs.bundles.androidx)
+    implementation(libs.bundles.compose)
+    implementation(libs.navigation.compose)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
     dataModule()
     domainModule()
