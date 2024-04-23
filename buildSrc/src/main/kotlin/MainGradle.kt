@@ -20,10 +20,7 @@ class MainGradle: Plugin<Project> {
 
     private fun projectConfigure(project: Project) {
         project.android().apply {
-            compileSdk = ProjectConfig.compileSdk
-
             defaultConfig {
-                minSdk = ProjectConfig.minSdk
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             }
 
