@@ -1,21 +1,10 @@
 plugins {
-    `android-library`
-    `kotlin-android`
-    id("kotlinx-serialization")
+    id("githubusers.android.library")
 }
 
-apply<MainGradle>()
 
 android {
     namespace = "ir.hoseinsa.data"
-
-    compileSdk = libs.versions.compileSdk.get().toInt()
-
-    defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
-    }
-
 }
 
 dependencies {

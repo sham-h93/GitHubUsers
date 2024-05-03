@@ -1,19 +1,10 @@
 plugins {
-    `android-library`
-    `kotlin-android`
+    id("githubusers.android.library")
 }
 
-apply<MainGradle>()
 
 android {
     namespace = "ir.hoseinsa.domain"
-
-    compileSdk = libs.versions.compileSdk.get().toInt()
-
-    defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
-    }
 
 }
 dependencies {

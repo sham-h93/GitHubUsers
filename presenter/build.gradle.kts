@@ -1,33 +1,12 @@
 plugins {
-    `android-library`
-    `kotlin-android`
+    id("githubusers.android.library")
+    id("githubusers.android.library.compose")
 }
-
-apply<MainGradle>()
 
 android {
-
     namespace = "ir.hoseinsa.presenter"
-
-    compileSdk = libs.versions.compileSdk.get().toInt()
-
-    defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
-    }
-
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
+
 dependencies {
     implementation(libs.androidx.ktx)
     implementation(libs.android.material)
