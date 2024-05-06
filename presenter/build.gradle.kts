@@ -26,6 +26,5 @@ dependencies {
     implementation(libs.koin.compose)
     implementation(libs.paging.compose)
     implementation(libs.coil.compose)
-
-    domainModule()
+    implementation(project(":domain"))
 }

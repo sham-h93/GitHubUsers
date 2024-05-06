@@ -7,7 +7,6 @@ versionName = "1.0"
 
 kotlin = "1.9.22"
 androidGradlePlugin = "8.3.1"
-kotlinPluginSerialization = "1.9.21"
 ktx = "1.12.0"
 preferencesDataStore = "1.0.0"
 lifecycleRuntimeKtx = "2.7.0"
@@ -97,5 +96,5 @@ ktor = [
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-kotlin-plugin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinPluginSerialization" }
-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinPluginSerialization" }
+kotlin-plugin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

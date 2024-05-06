@@ -29,9 +29,8 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
-
-    dataModule()
-    domainModule()
-    presenterModule()
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presenter"))
 
 }

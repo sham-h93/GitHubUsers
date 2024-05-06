@@ -13,6 +13,5 @@ dependencies {
     implementation(libs.bundles.ktor)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.paging.runtime)
-
-    domainModule()
+    implementation(project(":domain"))
 }
