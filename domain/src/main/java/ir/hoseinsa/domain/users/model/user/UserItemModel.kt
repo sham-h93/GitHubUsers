@@ -1,6 +1,6 @@
 package ir.hoseinsa.domain.users.model.user
 
-data class UserItem(
-    val avatar_url: String,
+data class UserItemModel(
+    val avatarUrl: String,
     val login: String
 )

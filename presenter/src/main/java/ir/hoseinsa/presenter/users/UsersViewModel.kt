@@ -6,10 +6,13 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
+import androidx.paging.map
 import ir.hoseinsa.domain.users.usecases.GetUsers
 import ir.hoseinsa.presenter.users.intent.UsersScreenEvent
 import ir.hoseinsa.presenter.users.state.UsersState
 import ir.hoseinsa.presenter.utils.ConnectionUtils.isOnline
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class UsersViewModel(private val getUsers: GetUsers) : ViewModel() {
@@ -24,9 +27,11 @@ class UsersViewModel(private val getUsers: GetUsers) : ViewModel() {
     private fun getUsers() {
         if (isOnline()) {
             viewModelScope.launch {
-                val items = getUsers.invoke().cachedIn(viewModelScope)
+                val items = getUsers.invoke().map { pagingData ->
+                    pagingData.map { userItemModel -> userItemModel.toPresenter() }
+                }
                 state = state.copy(
-                    userItems = items
+                    userItemsModel = items
                 )
             }
         } else state = state.copy(

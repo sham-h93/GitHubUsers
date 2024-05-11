@@ -9,13 +9,13 @@ import io.ktor.client.plugins.ResponseException
 import ir.hoseinsa.data.remote.GithubApi
 import ir.hoseinsa.data.users.mapper.toDomain
 import ir.hoseinsa.data.users.model.UsersItemDto
-import ir.hoseinsa.domain.users.model.user.UserItem
+import ir.hoseinsa.domain.users.model.user.UserItemModel
 
 class UsersDataSource(
     private val api: GithubApi
-) : PagingSource<Int, UserItem>() {
+) : PagingSource<Int, UserItemModel>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserItem> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserItemModel> {
         val nextPage = params.key ?: START_PAGE
         return try {
             val response = api.getUsers(
@@ -39,7 +39,7 @@ class UsersDataSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, UserItem>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, UserItemModel>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
                 ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)

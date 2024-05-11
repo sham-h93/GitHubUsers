@@ -27,7 +27,7 @@ fun UsersScreen(
     usersViewModel: UsersViewModel = koinViewModel(),
 ) {
     val state = usersViewModel.state
-    val usersListState = usersViewModel.state.userItems?.collectAsLazyPagingItems()
+    val usersListState = usersViewModel.state.userItemsModel?.collectAsLazyPagingItems()
     val refreshLoadState = usersListState?.loadState?.refresh
     LaunchedEffect(key1 = true) {
         usersViewModel.onEvent(UsersScreenEvent.GetUsers)

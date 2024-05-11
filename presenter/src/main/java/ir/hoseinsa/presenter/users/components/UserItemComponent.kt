@@ -3,7 +3,6 @@ package ir.hoseinsa.presenter.users.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,8 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ir.hoseinsa.domain.users.model.user.UserItem
 import ir.hoseinsa.presenter.components.CircularImageComponent
+import ir.hoseinsa.presenter.users.model.UserItem
 import kotlin.random.Random
 
 @Composable
@@ -39,7 +38,7 @@ fun UserItemComponent(
             modifier = Modifier
                 .height(48.dp)
                 .width(48.dp),
-            imageUrl = userItem.avatar_url
+            imageUrl = userItem.avatarUrl
         )
         Spacer(modifier = Modifier.width(8.dp))
         Row(
