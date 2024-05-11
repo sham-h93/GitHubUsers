@@ -1,9 +1,9 @@
-package ir.hoseinsa.data.user.mapper
+package ir.hoseinsa.presenter.user.mapper
 
-import ir.hoseinsa.data.user.model.UserDto
 import ir.hoseinsa.domain.user.model.UserModel
+import ir.hoseinsa.presenter.user.model.User
 
-fun UserDto.toDomain(): UserModel = UserModel(
+fun UserModel.toPresenter(): User = User(
     avatarUrl = avatarUrl,
     bio = bio,
     followers = followers,

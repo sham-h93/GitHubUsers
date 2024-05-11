@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ir.hoseinsa.domain.user.usecases.GetUser
 import ir.hoseinsa.presenter.user.intent.UserDetailsScreenEvent
+import ir.hoseinsa.presenter.user.mapper.toPresenter
 import ir.hoseinsa.presenter.user.state.UserState
 import kotlinx.coroutines.launch
 
@@ -27,7 +28,7 @@ class UserViewModel(private val getUser: GetUser): ViewModel() {
                     result.isSuccess -> {
                         state = state.copy(
                             isLoading = false,
-                            user = result.getOrNull()
+                            user = result.getOrNull()?.toPresenter()
                         )
                     }
                     result.isFailure -> {

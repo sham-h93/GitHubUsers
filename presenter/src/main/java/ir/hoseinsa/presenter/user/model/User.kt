@@ -1,4 +1,4 @@
-package ir.hoseinsa.domain.user.model
+package ir.hoseinsa.presenter.user.model
 
 data class User(
     val avatarUrl: String,
