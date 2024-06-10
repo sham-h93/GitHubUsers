@@ -19,3 +19,7 @@ This project showcases a robust architecture for building Android apps using:
 * **Koin Dependency Injection:** Simplifies dependency management and promotes loose coupling.
 * **Ktor Networking:** Offers a flexible and performant approach to network calls.
 * **Coil Image Loading:** Handles asynchronous image loading efficiently.
+
+
+**CheckList**
+- [ ] write tests
