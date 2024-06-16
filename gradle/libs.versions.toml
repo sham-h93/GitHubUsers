@@ -34,8 +34,7 @@ androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx"
 app-compat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 preferences-data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "preferencesDataStore" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
-j-unit = { group = "junit", name = "junit", version.ref = "jUnit" }
-ext-j-unit = { group = "androidx.test.ext", name = "junit", version.ref = "extJUnit" }
+junit = { group = "junit", name = "junit", version.ref = "jUnit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
