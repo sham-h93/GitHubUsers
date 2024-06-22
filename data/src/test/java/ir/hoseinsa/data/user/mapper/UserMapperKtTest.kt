@@ -1,8 +1,8 @@
 package ir.hoseinsa.data.user.mapper
 
+import com.google.common.truth.Truth.assertThat
 import ir.hoseinsa.data.user.model.UserDto
 import ir.hoseinsa.domain.user.model.UserModel
-import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class UserMapperKtTest {
@@ -54,48 +54,14 @@ class UserMapperKtTest {
         )
 
         val userDtoToDomain = userDto.toDomain()
-        assertEquals(
-            "UserDto avatarUrl is the same of userModelDomain avatarUrl",
-            userModelDomain.avatarUrl,
-            userDtoToDomain.avatarUrl
-        )
 
-        assertEquals(
-            "UserDto followers is the same of userModelDomain followers",
-            userModelDomain.followers,
-            userDtoToDomain.followers
-        )
-
-        assertEquals(
-            "UserDto bio is the same of userModelDomain bio",
-            userModelDomain.bio,
-            userDtoToDomain.bio
-        )
-
-        assertEquals(
-            "UserDto following is the same of userModelDomain following",
-            userModelDomain.following,
-            userDtoToDomain.following
-        )
-
-        assertEquals(
-            "UserDto avatarUrl is the same of userModelDomain avatarUrl",
-            userModelDomain.avatarUrl,
-            userDtoToDomain.avatarUrl
-        )
-
-        assertEquals(
-            "UserDto login is the same of userModelDomain login",
-            userModelDomain.login,
-            userDtoToDomain.login
-        )
-
-        assertEquals(
-            "UserDto name is the same of userModelDomain name",
-            userModelDomain.name,
-            userDtoToDomain.name
-        )
-
+        assertThat(userDtoToDomain.avatarUrl).isEqualTo(userModelDomain.avatarUrl)
+        assertThat(userDtoToDomain.followers).isEqualTo(userModelDomain.followers)
+        assertThat(userDtoToDomain.bio).isEqualTo(userModelDomain.bio)
+        assertThat(userDtoToDomain.following).isEqualTo(userModelDomain.following)
+        assertThat(userDtoToDomain.avatarUrl).isEqualTo(userModelDomain.avatarUrl)
+        assertThat(userDtoToDomain.login).isEqualTo(userModelDomain.login)
+        assertThat(userDtoToDomain.name).isEqualTo(userModelDomain.name)
 
     }
 

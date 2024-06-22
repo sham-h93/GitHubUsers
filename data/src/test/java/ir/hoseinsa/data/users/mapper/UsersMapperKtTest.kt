@@ -1,8 +1,8 @@
 package ir.hoseinsa.data.users.mapper
 
+import com.google.common.truth.Truth.assertThat
 import ir.hoseinsa.data.users.model.UsersItemDto
 import ir.hoseinsa.domain.users.model.user.UserItemModel
-import org.junit.Assert.*
 import org.junit.Test
 
 class UsersMapperKtTest {
@@ -34,19 +34,10 @@ class UsersMapperKtTest {
             login = "login"
         )
 
-        val userItemsToDomain = usersItemDto.toDomain()
+        val usersItemsToDomain = usersItemDto.toDomain()
 
-        assertEquals(
-            "UsersItemDto avatarUrl is the same of UsersItemDomain avatarUrl",
-            usersItemDomain.avatarUrl,
-            userItemsToDomain.avatarUrl
-        )
-
-        assertEquals(
-            "UsersItemDto login is the same of UsersItemDomain login",
-            usersItemDomain.login,
-            userItemsToDomain.login
-        )
+        assertThat(usersItemsToDomain.login).isEqualTo(usersItemDomain.avatarUrl)
+        assertThat(usersItemsToDomain.avatarUrl).isEqualTo(usersItemDomain.avatarUrl)
 
     }
 

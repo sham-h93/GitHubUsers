@@ -13,6 +13,7 @@ dependencies {
     implementation(libs.bundles.ktor)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.paging.runtime)
-    implementation(libs.junit)
+    testImplementation(libs.junit)
+    testImplementation(libs.truth)
     implementation(project(":domain"))
 }

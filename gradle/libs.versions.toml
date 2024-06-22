@@ -28,6 +28,7 @@ kotlinXSerialization = "1.6.2"
 coil = "2.5.0"
 pagingRuntime = "3.2.1"
 pagingCompose = "3.3.0-alpha05"
+truth = "1.4.2"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -36,6 +37,7 @@ preferences-data-store = { group = "androidx.datastore", name = "datastore-prefe
 android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
 junit = { group = "junit", name = "junit", version.ref = "jUnit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
