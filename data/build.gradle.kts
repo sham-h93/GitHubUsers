@@ -15,5 +15,6 @@ dependencies {
     implementation(libs.paging.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.truth)
+    testImplementation(libs.coroutines.test)
     implementation(project(":domain"))
 }
