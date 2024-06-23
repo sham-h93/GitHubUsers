@@ -27,4 +27,15 @@ class UserRepositoryTest {
 
     }
 
+    @Test
+    fun getUser_emitErrorWhenUserNameIsEmpty() = runTest{
+        var user: UserModel? = null
+        userRepository.getUser("").collect { result ->
+            if (result.isSuccess) user = result.getOrNull()
+        }
+
+        assertThat(user).isNull()
+
+    }
+
 }
