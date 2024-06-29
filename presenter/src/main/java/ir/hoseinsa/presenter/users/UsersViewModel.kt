@@ -26,6 +26,7 @@ class UsersViewModel(private val getUsers: GetUsers) : ViewModel() {
 
     private fun getUsers() {
         if (isOnline()) {
+            state = state.copy(isOnline = true)
             viewModelScope.launch {
                 val items = getUsers.invoke().map { pagingData ->
                     pagingData.map { userItemModel -> userItemModel.toPresenter() }
