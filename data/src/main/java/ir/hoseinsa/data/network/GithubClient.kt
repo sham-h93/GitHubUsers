@@ -1,4 +1,4 @@
-package ir.hoseinsa.data.remote
+package ir.hoseinsa.data.network
 
 import android.util.Log
 import io.ktor.client.HttpClient

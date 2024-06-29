@@ -1,4 +1,4 @@
-package ir.hoseinsa.data.remote
+package ir.hoseinsa.data.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get

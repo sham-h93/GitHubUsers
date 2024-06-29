@@ -1,4 +1,4 @@
-package ir.hoseinsa.data.users.repository
+package ir.hoseinsa.data.network
 
 import android.util.Log
 import androidx.paging.PagingSource
@@ -6,16 +6,15 @@ import androidx.paging.PagingState
 import io.ktor.client.call.body
 import io.ktor.client.network.sockets.ConnectTimeoutException
 import io.ktor.client.plugins.ResponseException
-import ir.hoseinsa.data.remote.GithubApi
-import ir.hoseinsa.data.users.mapper.toDomain
-import ir.hoseinsa.data.users.model.UsersItemDto
-import ir.hoseinsa.domain.users.model.user.UserItemModel
+import ir.hoseinsa.data.data_sources.mapper.toRepo
+import ir.hoseinsa.data.data_sources.model.UserDto
+import ir.hoseinsa.data.users.model.UserRepo
 
-class UsersDataSource(
+class UsersPagingSource(
     private val api: GithubApi
-) : PagingSource<Int, UserItemModel>() {
+) : PagingSource<Int, UserRepo>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserItemModel> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserRepo> {
         val nextPage = params.key ?: START_PAGE
         return try {
             val response = api.getUsers(
@@ -23,8 +22,8 @@ class UsersDataSource(
             perPage = params.loadSize
         )
             Log.e("::load", "load: ${response.status}", )
-            val data = response.body<List<UsersItemDto>>()
-            val usersData = data.toDomain()
+            val data = response.body<List<UserDto>>()
+            val usersData = data.toRepo()
             LoadResult.Page(
                 data = usersData,
                 prevKey = null,
@@ -39,7 +38,7 @@ class UsersDataSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, UserItemModel>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, UserRepo>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
                 ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)

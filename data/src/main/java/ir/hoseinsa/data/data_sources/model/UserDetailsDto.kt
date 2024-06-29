@@ -1,12 +1,14 @@
-package ir.hoseinsa.data.user.model
+package ir.hoseinsa.data.data_sources.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UserDto(
+data class UserDetailsDto(
     @SerialName("avatar_url")
     val avatarUrl: String,
+    @SerialName("login")
+    val login: String,
     @SerialName("bio")
     val bio: String? = null,
     @SerialName("blog")
@@ -39,8 +41,6 @@ data class UserDto(
     val id: Int,
     @SerialName("location")
     val location: String? = null,
-    @SerialName("login")
-    val login: String,
     @SerialName("name")
     val name: String,
     @SerialName("node_id")

@@ -1,11 +1,11 @@
 package ir.hoseinsa.domain.users.repository
 
 import androidx.paging.PagingData
-import ir.hoseinsa.domain.users.model.user.UserItemModel
+import ir.hoseinsa.domain.users.model.user.UserDomain
 import kotlinx.coroutines.flow.Flow
 
 interface UsersRepository {
 
-    fun getUsers(): Flow<PagingData<UserItemModel>>
+    fun getUsers(): Flow<PagingData<UserDomain>>
 
 }

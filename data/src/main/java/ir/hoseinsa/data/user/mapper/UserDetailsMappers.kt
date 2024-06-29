@@ -1,9 +1,9 @@
 package ir.hoseinsa.data.user.mapper
 
-import ir.hoseinsa.data.user.model.UserDto
+import ir.hoseinsa.data.user.model.UserDetailRepo
 import ir.hoseinsa.domain.user.model.UserModel
 
-fun UserDto.toDomain(): UserModel = UserModel(
+fun UserDetailRepo.toDomain(): UserModel = UserModel(
     avatarUrl = avatarUrl,
     bio = bio,
     followers = followers,
