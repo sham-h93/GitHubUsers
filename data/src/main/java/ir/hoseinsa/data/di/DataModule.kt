@@ -1,7 +1,7 @@
 package ir.hoseinsa.data.di
 
 import io.ktor.client.HttpClient
-import ir.hoseinsa.data.data_sources.GithubDataSourcesImpl
+import ir.hoseinsa.data.data_sources.GithubDataUsersSourcesImpl
 import ir.hoseinsa.data.data_sources.GithubUsersDataSource
 import ir.hoseinsa.data.network.githubClient
 import ir.hoseinsa.domain.users.repository.UsersRepository
@@ -13,5 +13,5 @@ val dataModule = module {
     single<HttpClient> { githubClient() }
     single<GithubApi> { GithubApi(get()) }
     single<UsersRepository> { UsersRepositoryImpl(get()) }
-    single<GithubUsersDataSource> { GithubDataSourcesImpl(get()) }
+    single<GithubUsersDataSource> { GithubDataUsersSourcesImpl(get()) }
 }

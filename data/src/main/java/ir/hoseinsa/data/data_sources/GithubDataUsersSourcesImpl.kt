@@ -10,7 +10,7 @@ import ir.hoseinsa.data.network.UsersPagingSource
 import ir.hoseinsa.data.users.model.UserDetailRepo
 import ir.hoseinsa.data.users.model.UserRepo
 
-class GithubDataSourcesImpl(
+class GithubDataUsersSourcesImpl(
     private val api: GithubApi
 ) : GithubUsersDataSource {
 
