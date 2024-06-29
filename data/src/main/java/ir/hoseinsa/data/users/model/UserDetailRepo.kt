@@ -1,6 +1,6 @@
-package ir.hoseinsa.domain.user.model
+package ir.hoseinsa.data.users.model
 
-data class UserModel(
+data class UserDetailRepo(
     val avatarUrl: String,
     val bio: String?,
     val followers: Int,

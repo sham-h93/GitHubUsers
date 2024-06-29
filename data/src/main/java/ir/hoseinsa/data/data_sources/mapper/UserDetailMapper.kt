@@ -1,7 +1,7 @@
 package ir.hoseinsa.data.data_sources.mapper
 
 import ir.hoseinsa.data.data_sources.model.UserDetailsDto
-import ir.hoseinsa.data.user.model.UserDetailRepo
+import ir.hoseinsa.data.users.model.UserDetailRepo
 
 
 fun UserDetailsDto.toRepo(): UserDetailRepo = UserDetailRepo(

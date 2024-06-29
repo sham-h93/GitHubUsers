@@ -5,13 +5,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ir.hoseinsa.domain.user.usecases.GetUser
+import ir.hoseinsa.domain.users.usecases.GetUser
 import ir.hoseinsa.presenter.user.intent.UserDetailsScreenEvent
 import ir.hoseinsa.presenter.user.mapper.toPresenter
 import ir.hoseinsa.presenter.user.state.UserState
 import kotlinx.coroutines.launch
 
-class UserViewModel(private val getUser: GetUser): ViewModel() {
+class UserViewModel(
+    private val getUser: GetUser
+): ViewModel() {
 
     var state by mutableStateOf(UserState())
         private set
@@ -23,7 +25,7 @@ class UserViewModel(private val getUser: GetUser): ViewModel() {
 
     private fun getUser(username: String) {
         viewModelScope.launch {
-            getUser.invoke(username).collect { result ->
+            getUser.invoke(username).let { result ->
                 when {
                     result.isSuccess -> {
                         state = state.copy(
