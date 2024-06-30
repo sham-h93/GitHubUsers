@@ -9,11 +9,15 @@ import ir.hoseinsa.data.users.mapper.toDomain
 import ir.hoseinsa.domain.users.model.User
 import ir.hoseinsa.domain.users.model.UserDetail
 import ir.hoseinsa.domain.users.repository.UsersRepository
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 
 class UsersRepositoryImpl(
-    private val githubUsersDataSource: GithubUsersDataSource
+    private val githubUsersDataSource: GithubUsersDataSource,
+    private val defaultDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : UsersRepository {
 
     override fun getUsers(): Flow<PagingData<User>> =
@@ -22,9 +26,8 @@ class UsersRepositoryImpl(
             pagingSourceFactory = { githubUsersDataSource.getUsers() }
         ).flow.map { data -> data.map { it.toDomain() } }
 
-    override suspend fun getUser(username: String): Result<UserDetail> {
-        return githubUsersDataSource.getUser(username).mapCatching { it.toDomain() }
+    override suspend fun getUser(username: String): Result<UserDetail> = withContext(defaultDispatcher) {
+        return@withContext githubUsersDataSource.getUser(username).map { it.toDomain() }
     }
-
 }
 
