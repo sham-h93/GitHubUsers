@@ -6,6 +6,7 @@ import androidx.paging.PagingState
 import io.ktor.client.call.body
 import io.ktor.client.network.sockets.ConnectTimeoutException
 import io.ktor.client.plugins.ResponseException
+import io.ktor.http.isSuccess
 import ir.hoseinsa.data.data_sources.mapper.toRepo
 import ir.hoseinsa.data.data_sources.model.UserDto
 import ir.hoseinsa.data.users.model.UserRepo
@@ -21,7 +22,11 @@ class UsersPagingSource(
             since = nextPage,
             perPage = params.loadSize
         )
-            Log.e("::load", "load: ${response.status}", )
+
+            if(!response.status.isSuccess()) {
+                return LoadResult.Error(Exception(response.status.description))
+            }
+
             val data = response.body<List<UserDto>>()
             val usersData = data.toRepo()
             LoadResult.Page(
