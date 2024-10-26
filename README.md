@@ -1,4 +1,4 @@
-## GithubUsers: Modern Android App with Kotlin, MVI, Layered Architecture, and Jetpack Compose
+## GithubUsers: Modern Android App with Kotlin, Clean Architecture, and Jetpack Compose
 
 This project showcases a robust architecture for building Android apps using:
 
