@@ -11,7 +11,7 @@ This project showcases a robust architecture for building Android apps using:
 * Coil for image loading
 * And other essential libraries
 
-**Key Features:**
+**Key Features**
 
 * **Clean Architecture:** Separates data, domain, and presentation logic for maintainability and testability.
 * **Modern UI with Jetpack Compose:** Provides a declarative and composable way to build UIs.
